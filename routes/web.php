@@ -12,3 +12,7 @@
 */
 
 Route::get('/','PagesController@index');
+Route::get('/download', function (){
+    $name = public_path('storage\files\CV-TeddiusMunyaoMaingi.pdf');
+    return response()->file($name);
+})->name('download');
