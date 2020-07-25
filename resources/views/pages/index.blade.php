@@ -24,12 +24,12 @@
                 </div>
                 <br>
                 <div>
-                    <img src="storage/images/programmer.jpeg" class="center" alt="TEDDY" style="width:70%; height:60%;">                    
+                    <img src="myfiles/images/programmer.jpeg" class="center" alt="TEDDY" style="width:70%; height:60%;">                    
 
                 </div>
             </div>
             <div class="col-md-6 col-sm-6">
-                <img src="storage/images/ted.jpg" class="center" alt="TEDDY" style="width:50%; height:50%; border:20px #ccc; border-style:ridge; border-radius:50%;">
+                <img src="myfiles/images/ted.jpg" class="center" alt="TEDDY" style="width:50%; height:50%; border:20px #ccc; border-style:ridge; border-radius:50%;">
 
                 <h2><br>About Me</h2>
                 <p>I am a web developer based in Nairobi Kenya. <br>
