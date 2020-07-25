@@ -1,7 +1,7 @@
 <nav class="fixed border-bottom">
     <div class="row">
         <div class="col-md-6 col-sm-6">
-            <img src="storage/images/mylogo.png" style="height: 60px; margin: 1% 10%;">
+            <img src="myfiles/images/mylogo.png" style="height: 60px; margin: 1% 10%;">
         </div>
         <div class="col-md-6 col-sm-6">
             <ul class="navul">
