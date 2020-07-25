@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-6">
-                <h1><b>Teddius Maingi</b></h1>
+                <h1><b>Teddius Maingi</b></h1>git 
                 <h2><b>Web Developer</b></h2> <br>
 
                 <div style="float:right;">
