@@ -7,20 +7,25 @@
                 <h1><b>Teddius Maingi</b></h1>
                 <h2><b>Web Developer</b></h2> <br>
 
-                <div style="float:right;">
-                    <a href="{{ route('download') }}"  target="_blank" class="btn btn-outline-primary mt-4"><i class="mdi mdi-cloud-download"></i> View Resume</a> <br> 
-                </div>
-
-                <div style="padding-left: 15%">
-                    <p><i class="mdi mdi-email"></i>&nbsp; maingi.teddius@thetag.co.ke </p>
-                    <p><i class="mdi mdi-card-account-phone"></i>&nbsp; +254795615409</p>
-                    <p><i class="mdi mdi-map-marker"></i>&nbsp; Nairobi, Kenya</p>
-                
-                    <a href="https://github.com/DeogratiousT" target="_blank"><i class="mdi mdi-github mdi-18px"></i></a>&nbsp; &nbsp;
-                    <a href="https://stackoverflow.com/users/12396215/teddius" target="_blank"><i class="mdi mdi-stack-overflow mdi-18px"></i></a>&nbsp; &nbsp;
-                    <a href="https://twitter.com/Teddius2" target="_blank"><i class="mdi mdi-twitter mdi-18px"></i></a> &nbsp; &nbsp;
-                    <a href="https://www.facebook.com/teddy.maingi.1" target="_blank"><i class="mdi mdi-facebook mdi-18px"></i></a> &nbsp; &nbsp;
-                    <a href="https://www.instagram.com/teddius_maingi/" target="_blank"><i class="mdi mdi-instagram mdi-18px"></i></a>&nbsp; &nbsp;
+                <div class="row">
+                    <div class="col-md-6">
+                        <div style="padding-left: 15%">
+                            <p><i class="mdi mdi-email"></i>&nbsp; maingi.teddius@thetag.co.ke </p>
+                            <p><i class="mdi mdi-card-account-phone"></i>&nbsp; +254795615409</p>
+                            <p><i class="mdi mdi-map-marker"></i>&nbsp; Nairobi, Kenya</p>
+                        
+                            <a href="https://github.com/DeogratiousT" target="_blank"><i class="mdi mdi-github mdi-18px"></i></a>&nbsp; &nbsp;
+                            <a href="https://stackoverflow.com/users/12396215/teddius" target="_blank"><i class="mdi mdi-stack-overflow mdi-18px"></i></a>&nbsp; &nbsp;
+                            <a href="https://twitter.com/Teddius2" target="_blank"><i class="mdi mdi-twitter mdi-18px"></i></a> &nbsp; &nbsp;
+                            <a href="https://www.facebook.com/teddy.maingi.1" target="_blank"><i class="mdi mdi-facebook mdi-18px"></i></a> &nbsp; &nbsp;
+                            <a href="https://www.instagram.com/teddius_maingi/" target="_blank"><i class="mdi mdi-instagram mdi-18px"></i></a>&nbsp; &nbsp;
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div>
+                            <a href="{{ route('download') }}"  target="_blank" class="btn btn-outline-primary center mt-4"><i class="mdi mdi-cloud-download"></i> View Resume</a> <br> 
+                        </div>
+                    </div>
                 </div>
                 <br>
                 <div>
@@ -35,12 +40,12 @@
                 <p>I am a web developer based in Nairobi Kenya. <br>
                 i have rich experience in design and customization of websites. <br>
                 My strengths are in: </p>
-                <button class="btn btn-outline-primary btn-sm" disabled>HTML</button>
-                <button class="btn btn-outline-primary btn-sm" disabled>CSS</button>
-                <button class="btn btn-outline-primary btn-sm" disabled>BOOTSTRAP</button>
-                <button class="btn btn-outline-primary btn-sm" disabled>JAVASCRIPT</button>             
-                <button class="btn btn-outline-primary btn-sm" disabled>PHP</button>
-                <button class="btn btn-outline-primary btn-sm" disabled>LARAVEL</button>
+                <button class="btn btn-outline-primary btn-sm mt-2" disabled>HTML</button>
+                <button class="btn btn-outline-primary btn-sm mt-2" disabled>CSS</button>
+                <button class="btn btn-outline-primary btn-sm mt-2" disabled>BOOTSTRAP</button>
+                <button class="btn btn-outline-primary btn-sm mt-2" disabled>JAVASCRIPT</button>             
+                <button class="btn btn-outline-primary btn-sm mt-2" disabled>PHP</button>
+                <button class="btn btn-outline-primary btn-sm mt-2" disabled>LARAVEL</button>
             </div>
         </div>
     </div>
