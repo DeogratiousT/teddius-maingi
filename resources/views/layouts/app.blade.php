@@ -16,7 +16,7 @@
 </head>
 <body>
     <div class="bg-danger text-light">
-        <p class="text-center m-2 p-2">Oops! <i class="mdi mdi-emoticon-cry-outline"></i> This site is currently under maintainance, some links might not works <i class="mdi mdi-emoticon-sad-outline"></i></p>
+        <p class="text-center m-2 p-2">Oops! <i class="mdi mdi-emoticon-cry-outline"></i> This site is currently under maintainance, some links might not work <i class="mdi mdi-emoticon-sad-outline"></i></p>
       </div>
     @include('inc.navbar')
     <div class="container">
