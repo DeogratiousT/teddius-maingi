@@ -20,7 +20,7 @@
             <a class="nav-link" href="#">Services</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="http://thetag.co.ke" target="_blank">Blog</a>
+              <a class="nav-link" href="http://thetag.herokuapp.com" target="_blank">Blog</a>
         </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
