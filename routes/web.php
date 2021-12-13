@@ -13,6 +13,6 @@
 
 Route::get('/','PagesController@index');
 Route::get('/download', function (){
-    $name = public_path('myfiles/files/CV-TeddiusMunyaoMaingi.pdf');
+    $name = public_path('myfiles/files/CV.pdf');
     return response()->file($name);
 })->name('download');
