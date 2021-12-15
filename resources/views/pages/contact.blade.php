@@ -36,7 +36,8 @@
       </div>
 
       <form role="form" class="php-email-form mt-4">
-        @csrf
+        
+        <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
         
         <div class="row">
           <div class="col-md-6 form-group">
@@ -70,3 +71,54 @@
 
     </div>
   </section>
+
+  @push('scripts')
+      <script src="{{ asset('js/app.js') }}"></script>
+      <script>
+        /**
+        * Contact Form Handling
+        */
+
+          let form = document.querySelector('.php-email-form');
+
+        form.addEventListener('submit', function(event) {
+          event.preventDefault();
+          
+          form.querySelector('.loading').classList.add('d-block');
+          form.querySelector('.error-message').classList.remove('d-block');
+          form.querySelector('.sent-message').classList.remove('d-block');
+
+          var _token = $("input[name='_token']").val();
+          var name = $("input[name='name']").val();
+          var email = $("input[name='email']").val();
+          var subject = $("input[name='subject']").val();
+          var message = $("textarea[name='message']").val();
+
+          $.ajax({
+              url: "{{ route('contactme') }}",
+              type:'POST',
+              data: {_token:_token, name:name, email:email, subject:subject, message:message},
+              success: function(data) {
+                  if($.isEmptyObject(data.error)){
+                      displaySuccess(data.success);
+                  }else{
+                      printErrorMsg(data.error);
+                  }
+              }
+          });
+        });
+
+        function displayError(errors) {
+          form.querySelector('.loading').classList.remove('d-block');
+          form.querySelector('.error-message').innerHTML = error;
+          form.querySelector('.error-message').classList.add('d-block');
+        }
+
+        function displaySuccess(success) {
+          form.querySelector('.loading').classList.remove('d-block');
+          form.querySelector('.sent-message').innerHTML = success;
+          form.querySelector('.sent-message').classList.add('d-block');
+        }
+
+      </script>
+  @endpush
