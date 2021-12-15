@@ -21,6 +21,5 @@
       <a href="https://github.com/DeogratiousT" target="_blank" class="github"><i class="bi bi-github"></i></a>
       <a href="https://twitter.com/teddiusmaingi" target="_blank" class="twitter"><i class="bi bi-twitter"></i></a>
     </div>
-
   </div>
 </header>
