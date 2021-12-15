@@ -1,43 +1,85 @@
 /**
-* Contact Form Handling
+* PHP Email Form Validation - v3.2
+* URL: https://bootstrapmade.com/php-email-form/
+* Author: BootstrapMade.com
 */
+(function () {
+  "use strict";
 
-  let form = document.querySelector('.php-email-form');
+  let forms = document.querySelectorAll('.php-email-form');
 
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    form.querySelector('.loading').classList.add('d-block');
-    form.querySelector('.error-message').classList.remove('d-block');
-    form.querySelector('.sent-message').classList.remove('d-block');
+  forms.forEach( function(e) {
+    e.addEventListener('submit', function(event) {
+      event.preventDefault();
 
-    var name = $("input[name='name']").val();
-    var email = $("input[name='email']").val();
-    var subject = $("input[name='subject']").val();
-    var message = $("textarea[name='message']").val();
+      let thisForm = this;
 
-    $.ajax({
-        url: "{{ route('contactme') }}",
-        type:'POST',
-        data: {name:name, email:email, subject:subject, message:message},
-        success: function(data) {
-            if($.isEmptyObject(data.error)){
-                displaySuccess(data.success);
-            }else{
-                printErrorMsg(data.error);
+      let action = thisForm.getAttribute('action');
+      let recaptcha = thisForm.getAttribute('data-recaptcha-site-key');
+      
+      if( ! action ) {
+        displayError(thisForm, 'The form action property is not set!')
+        return;
+      }
+      thisForm.querySelector('.loading').classList.add('d-block');
+      thisForm.querySelector('.error-message').classList.remove('d-block');
+      thisForm.querySelector('.sent-message').classList.remove('d-block');
+
+      let formData = new FormData( thisForm );
+
+      if ( recaptcha ) {
+        if(typeof grecaptcha !== "undefined" ) {
+          grecaptcha.ready(function() {
+            try {
+              grecaptcha.execute(recaptcha, {action: 'php_email_form_submit'})
+              .then(token => {
+                formData.set('recaptcha-response', token);
+                php_email_form_submit(thisForm, action, formData);
+              })
+            } catch(error) {
+              displayError(thisForm, error)
             }
+          });
+        } else {
+          displayError(thisForm, 'The reCaptcha javascript API url is not loaded!')
         }
+      } else {
+        php_email_form_submit(thisForm, action, formData);
+      }
     });
   });
 
-  function displayError(errors) {
-    form.querySelector('.loading').classList.remove('d-block');
-    form.querySelector('.error-message').innerHTML = error;
-    form.querySelector('.error-message').classList.add('d-block');
+  function php_email_form_submit(thisForm, action, formData) {
+    fetch(action, {
+      method: 'POST',
+      body: formData,
+      headers: {'X-Requested-With': 'XMLHttpRequest'}
+    })
+    .then(response => {
+      if( response.ok ) {
+        return response.text()
+      } else {
+        throw new Error(`${response.status} ${response.statusText} ${response.url}`); 
+      }
+    })
+    .then(data => {
+      thisForm.querySelector('.loading').classList.remove('d-block');
+      if (data.trim() == 'OK') {
+        thisForm.querySelector('.sent-message').classList.add('d-block');
+        thisForm.reset(); 
+      } else {
+        throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action); 
+      }
+    })
+    .catch((error) => {
+      displayError(thisForm, error);
+    });
   }
 
-  function displaySuccess(success) {
-    form.querySelector('.loading').classList.remove('d-block');
-    form.querySelector('.sent-message').innerHTML = success;
-    form.querySelector('.sent-message').classList.add('d-block');
+  function displayError(thisForm, error) {
+    thisForm.querySelector('.loading').classList.remove('d-block');
+    thisForm.querySelector('.error-message').innerHTML = error;
+    thisForm.querySelector('.error-message').classList.add('d-block');
   }
+
+})();

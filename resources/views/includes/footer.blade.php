@@ -9,8 +9,8 @@
 <script src="{{ asset('personal/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
 <script src="{{ asset('personal/vendor/swiper/swiper-bundle.min.js') }}"></script>
 <script src="{{ asset('personal/vendor/waypoints/noframework.waypoints.js') }}"></script>
-<script src="{{ asset('js/app.js') }}"></script>
-<script src="{{ asset('personal/vendor/php-email-form/validate.js') }} "></script>
 
 <!-- Template Main JS File -->
 <script src="{{ asset('personal/js/main.js') }}"></script>
+
+@stack('scripts')
