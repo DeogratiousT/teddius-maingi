@@ -241,7 +241,6 @@ return [
             'MAIL_PASSWORD',
             'MAIL_ENCRYPTION',
             'MAIL_OWN',
-            'MAIL_FROM_NAME',
         ]
     ],
 
