@@ -15,7 +15,7 @@ use App\Http\Controllers\ContactController;
 |
 */
 
-Route::get('/', [PagesController::class, 'index']);
+Route::get('/', [PagesController::class, 'index'])->name('home');
 Route::post('/contact', [ContactController::class, 'contactMe'])->name('contactme');
 
 Route::get('/download', function (){

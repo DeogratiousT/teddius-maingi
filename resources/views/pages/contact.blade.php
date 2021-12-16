@@ -42,23 +42,29 @@
         <div class="row">
           <div class="col-md-6 form-group">
             <label for="name">Your Name</label>
-            <input type="text" name="name" class="form-control" id="name" placeholder="Don Joe" required>
+            <input type="text" name="name" class="form-control" id="name" placeholder="Don Joe" value="{{ old('name') }}" autocomplete="off">
+            <p class="text-danger" id="lname"></p>
           </div>
 
-          <div class="col-md-6 form-group mt-3 mt-md-0">
+          <div class="col-md-6 form-group">
             <label for="name">Your Email</label>  
-            <input type="email" class="form-control" name="email" id="email" placeholder="example@example.com" required>
+            <input type="email" class="form-control" name="email" id="email" placeholder="example@example.com" value="{{ old('email') }}" autocomplete="off">
+            <p class="text-danger" id="lemail"></p>
           </div>
         </div>
 
-        <div class="form-group mt-3">
+        <div class="form-group">
           <label for="name">Subject</label>
-          <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+          <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" value="{{ old('subject') }}" autocomplete="off">
+          <p class="text-danger" id="lsubject"></p>
         </div>
 
-        <div class="form-group mt-3">
+        <div class="form-group">
           <label for="name">Message</label>
-          <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+          <textarea class="form-control" name="message" id="message" rows="5" placeholder="Message" autocomplete="off">
+            {{ old('message') }}
+          </textarea>
+          <p class="text-danger" id="lmessage"></p>
         </div>
 
         <div class="my-3">
@@ -83,6 +89,8 @@
 
         form.addEventListener('submit', function(event) {
           event.preventDefault();
+
+          clearErrors();
           
           form.querySelector('.loading').classList.add('d-block');
           form.querySelector('.error-message').classList.remove('d-block');
@@ -99,25 +107,96 @@
               type:'POST',
               data: {_token:_token, name:name, email:email, subject:subject, message:message},
               success: function(data) {
-                  if($.isEmptyObject(data.error)){
+                  if($.isEmptyObject(data.errors)){
+                      clearInputs();
                       displaySuccess(data.success);
                   }else{
-                      printErrorMsg(data.error);
+                    loopErrors(data.errors);
                   }
               }
           });
         });
 
-        function displayError(errors) {
-          form.querySelector('.loading').classList.remove('d-block');
-          form.querySelector('.error-message').innerHTML = error;
-          form.querySelector('.error-message').classList.add('d-block');
+        function loopErrors(errors) {
+          errors.forEach(error => {
+            if (error['0'] == 'name') {
+              let input = document.getElementById('name');
+              let label = document.getElementById('lname');
+              displayError(error, input, label);
+            }
+
+            if (error['0'] == 'email') {
+              let input = document.getElementById('email');
+              let label = document.getElementById('lemail');
+              displayError(error, input, label);
+            }
+
+            if (error['0'] == 'subject') {
+              let input = document.getElementById('subject');
+              let label = document.getElementById('lsubject');
+              displayError(error, input, label);
+            }
+
+            if (error['0'] == 'message') {
+              let input = document.getElementById('message');
+              let label = document.getElementById('lmessage');
+              displayError(error, input, label);
+            }
+          });
         }
 
         function displaySuccess(success) {
           form.querySelector('.loading').classList.remove('d-block');
           form.querySelector('.sent-message').innerHTML = success;
           form.querySelector('.sent-message').classList.add('d-block');
+        }
+
+        function displayError(error, input, label) {
+          input.classList.add("border");
+          input.classList.add("border-danger");
+          label.innerHTML = error['1'];
+
+          form.querySelector('.loading').classList.remove('d-block');
+        }
+
+        function clearErrors() {
+          document.getElementById('name').classList.remove('border');
+          document.getElementById('name').classList.remove('border-danger');
+          document.getElementById('lname').innerHTML = '';
+
+          document.getElementById('email').classList.remove('border');
+          document.getElementById('email').classList.remove('border-danger');
+          document.getElementById('lemail').innerHTML = '';
+
+          document.getElementById('subject').classList.remove('border');
+          document.getElementById('subject').classList.remove('border-danger');
+          document.getElementById('lsubject').innerHTML = '';
+
+          document.getElementById('message').classList.remove('border');
+          document.getElementById('message').classList.remove('border-danger');
+          document.getElementById('lmessage').innerHTML = '';
+        }
+
+        function clearInputs() {
+          document.getElementById('name').classList.remove('border');
+          document.getElementById('name').classList.remove('border-danger');
+          document.getElementById('lname').innerHTML = '';
+          document.getElementById('name').value = '';
+
+          document.getElementById('email').classList.remove('border');
+          document.getElementById('email').classList.remove('border-danger');
+          document.getElementById('lemail').innerHTML = '';
+          document.getElementById('email').value = '';
+
+          document.getElementById('subject').classList.remove('border');
+          document.getElementById('subject').classList.remove('border-danger');
+          document.getElementById('lsubject').innerHTML = '';
+          document.getElementById('subject').value = '';
+
+          document.getElementById('message').classList.remove('border');
+          document.getElementById('message').classList.remove('border-danger');
+          document.getElementById('lmessage').innerHTML = '';
+          document.getElementById('message').value = '';
         }
 
       </script>
