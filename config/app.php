@@ -232,4 +232,17 @@ return [
 
     ],
 
+    'debug_blacklist' => [
+        '_ENV' => [
+            'MAIL_DRIVER',
+            'MAIL_HOST',
+            'MAIL_PORT',
+            'MAIL_USERNAME',
+            'MAIL_PASSWORD',
+            'MAIL_ENCRYPTION',
+            'MAIL_OWN',
+            'MAIL_FROM_NAME',
+        ]
+    ],
+
 ];

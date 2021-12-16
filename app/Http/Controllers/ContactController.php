@@ -24,7 +24,7 @@ class ContactController extends Controller
         if ($validated->passes()) {
             Mail::to(env('MAIL_OWN'))->send(new ContactSendMail($request->all()));
             Mail::to($request->email)->send(new ContactReceivedMail($request->all()));
-            
+
             return response()->json(['success'=>'Message Sent Successfully']);
         }
 

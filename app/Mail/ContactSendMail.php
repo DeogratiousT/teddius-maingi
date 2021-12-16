@@ -30,7 +30,6 @@ class ContactSendMail extends Mailable
     public function build()
     {
         return $this->markdown('emails.contact.send')
-                    ->from($this->mail['email'])
                 ->subject($this->mail['subject'])
             ->with(['mail'=>$this->mail]);
     }
