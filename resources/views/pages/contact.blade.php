@@ -60,11 +60,11 @@
         </div>
 
         <div class="form-group">
-          <label for="name">Message</label>
-          <textarea class="form-control" name="message" id="message" rows="5" placeholder="Message" autocomplete="off">
-            {{ old('message') }}
+          <label for="content">Message</label>
+          <textarea class="form-control" name="content" id="content" rows="5" placeholder="Message" autocomplete="off">
+            {{ old('content') }}
           </textarea>
-          <p class="text-danger" id="lmessage"></p>
+          <p class="text-danger" id="lcontent"></p>
         </div>
 
         <div class="my-3">
@@ -100,12 +100,12 @@
           var name = $("input[name='name']").val();
           var email = $("input[name='email']").val();
           var subject = $("input[name='subject']").val();
-          var message = $("textarea[name='message']").val();
+          var content = $("textarea[name='content']").val();
 
           $.ajax({
               url: "{{ route('contactme') }}",
               type:'POST',
-              data: {_token:_token, name:name, email:email, subject:subject, message:message},
+              data: {_token:_token, name:name, email:email, subject:subject, content:content},
               success: function(data) {
                   if($.isEmptyObject(data.errors)){
                       clearInputs();
@@ -137,9 +137,9 @@
               displayError(error, input, label);
             }
 
-            if (error['0'] == 'message') {
-              let input = document.getElementById('message');
-              let label = document.getElementById('lmessage');
+            if (error['0'] == 'content') {
+              let input = document.getElementById('content');
+              let label = document.getElementById('lcontent');
               displayError(error, input, label);
             }
           });
@@ -172,9 +172,9 @@
           document.getElementById('subject').classList.remove('border-danger');
           document.getElementById('lsubject').innerHTML = '';
 
-          document.getElementById('message').classList.remove('border');
-          document.getElementById('message').classList.remove('border-danger');
-          document.getElementById('lmessage').innerHTML = '';
+          document.getElementById('content').classList.remove('border');
+          document.getElementById('content').classList.remove('border-danger');
+          document.getElementById('lcontent').innerHTML = '';
         }
 
         function clearInputs() {
@@ -193,10 +193,10 @@
           document.getElementById('lsubject').innerHTML = '';
           document.getElementById('subject').value = '';
 
-          document.getElementById('message').classList.remove('border');
-          document.getElementById('message').classList.remove('border-danger');
-          document.getElementById('lmessage').innerHTML = '';
-          document.getElementById('message').value = '';
+          document.getElementById('content').classList.remove('border');
+          document.getElementById('content').classList.remove('border-danger');
+          document.getElementById('lcontent').innerHTML = '';
+          document.getElementById('content').value = '';
         }
 
       </script>
