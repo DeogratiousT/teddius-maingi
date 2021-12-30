@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use Illuminate\Http\Request;
 use App\Mail\ContactSendMail;
 use App\Mail\ContactReceivedMail;
@@ -18,12 +19,22 @@ class ContactController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'subject' => 'required',
-            'message' => 'required',
-        ]);
+            'content' => 'required',
+        ],
+        [
+            'content.required' => 'The message field is required.'
+        ]
+    );
      
         if ($validated->passes()) {
-            Mail::to(env('MAIL_OWN'))->send(new ContactSendMail($request->all()));
-            Mail::to($request->email)->send(new ContactReceivedMail($request->all()));
+            Contact::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'subject' => $request->subject,
+                'content' => $request->content,
+            ]);
+            // Mail::to(env('MAIL_OWN'))->send(new ContactSendMail($request->all()));
+            // Mail::to($request->email)->send(new ContactReceivedMail($request->all()));
 
             return response()->json(['success'=>'Message Sent Successfully']);
         }
@@ -44,8 +55,8 @@ class ContactController extends Controller
             array_push($data, ['subject', $errors->first('subject')]);
         }
 
-        if ($errors->has('message')) {
-            array_push($data, ['message', $errors->first('message')]);
+        if ($errors->has('content')) {
+            array_push($data, ['content', $errors->first('content')]);
         }
      
         return response()->json(['errors'=>$data]);
