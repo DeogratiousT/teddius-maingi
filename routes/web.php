@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +17,11 @@ use App\Http\Controllers\ContactController;
 */
 
 Route::get('/', [PagesController::class, 'index'])->name('home');
-Route::post('/contact', [ContactController::class, 'contactMe'])->name('contactme');
+Route::post('contact/me', [ContactController::class, 'contactMe'])->name('contactme');
+Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
+Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-Route::get('/download', function (){
+Route::get('download', function (){
     $name = public_path('myfiles/files/CV.pdf');
     return response()->file($name);
 })->name('download');
