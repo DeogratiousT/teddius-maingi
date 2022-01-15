@@ -9,10 +9,31 @@ use App\Mail\ContactReceivedMail;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
+use Freshbitsweb\Laratables\Laratables;
 use Illuminate\Support\Facades\Validator;
 
 class ContactController extends Controller
 {
+    /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth')->only('index');
+    }
+
+    public function index()
+    {
+        if (request()->ajax()) {
+            return Laratables::recordsOf(Contact::class);
+        }
+
+        $contacts = Contact::all()->count();
+
+        return view('contacts.index', ['contacts'=>$contacts]);
+    }
     public function contactMe(Request $request)
     {
         $validated = Validator::make($request->all(), [
