@@ -21,7 +21,7 @@ Route::post('contact/me', [ContactController::class, 'contactMe'])->name('contac
 Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-Route::get('download', function (){
+Route::get('resume', function (){
     $name = public_path('assets/myfiles/files/CV.pdf');
     return response()->file($name);
 })->name('download');
