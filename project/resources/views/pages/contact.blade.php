@@ -23,6 +23,7 @@
           <div class="info-box">
             <i class="bx bx-envelope"></i>
             <h3>Email Me</h3>
+            <p>dev@teddiusmaingi.com</p>
             <p>teddiusmaingi@gmail.com</p>
           </div>
         </div>
@@ -42,7 +43,7 @@
         <div class="row">
           <div class="col-md-6 form-group">
             <label for="name">Your Name</label>
-            <input type="text" name="name" class="form-control" id="name" placeholder="Don Joe" value="{{ old('name') }}" autocomplete="off">
+            <input type="text" name="name" class="form-control" id="name" placeholder="John Doe" value="{{ old('name') }}" autocomplete="off">
             <p class="text-danger" id="lname"></p>
           </div>
 

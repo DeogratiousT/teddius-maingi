@@ -14,6 +14,7 @@
             <ul>
               <li>Nairobi, Kenya</li>
               <li>+254 795 615409</li>
+              <li>dev@teddiusmaingi.com</li>
               <li>teddiusmaingi@gmail.com</li>
             </ul>
             </p>
@@ -36,13 +37,23 @@
         <div class="col-lg-6">
           <h3 class="resume-title">Professional Experience</h3>
           <div class="resume-item">
+            <h4>LARAVEL DEVELOPER</h4>
+            <h5>May 2022 - Present</h5>
+            <p><em>Gratitude India</em></p>
+            <p>
+            <ul>
+              <li>Lead developer in the analysis and design, development, implementation and testing of the Software Systems</li>
+            </ul>
+            </p>
+          </div>
+          <div class="resume-item">
             <h4>SOFTWARE DEVELOPER</h4>
-            <h5>Jan 2021 - Present</h5>
+            <h5>Jan 2021 - April 2022</h5>
             <p><em>Kenya National Innovation Agency</em></p>
             <p>
             <ul>
               <li>Lead in the analysis and design, development, and implementation of the Software Systems</li>
-              <li>Summit Administrator for the Technology and 4 <sup>th</sup> Industrial Revolution Summit of the Kenya Innovation Week 2021</li>
+              <li>Summit Administrator for the Technology and 4 <sup>th</sup> Industrial Revolution Summit of the Kenya Innovation Week 2021 and 2022</li>
               <li>ICT Support tasks including hardware installations and troubleshoooting and LAN installations, configurations and troubleshooting</li>
             </ul>
             </p>

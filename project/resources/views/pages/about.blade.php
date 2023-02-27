@@ -25,7 +25,7 @@
               <ul>
                 <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+254 795 615409</span></li>
                 <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>dev@teddiusmaingi.com</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>&nbsp;</strong> <span>teddiusmaingi@gmail.com</span></li>
+                <li><i class="bi bi-chevron-right"></i> <span>teddiusmaingi@gmail.com</span></li>
               </ul>
             </div>
           </div>
