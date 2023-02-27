@@ -24,14 +24,15 @@
             <div class="col-lg-6">
               <ul>
                 <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+254 795 615409</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>teddiusmaingi@gmail.com</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>dev@teddiusmaingi.com</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>&nbsp;</strong> <span>teddiusmaingi@gmail.com</span></li>
               </ul>
             </div>
           </div>
           <p>
               I'm a Software Developer with over 3 years experience in developing web applications and E.R.Ps. I am well-versed with multiple technologies, scripting and programming languages including PHP, Laravel, JS, GraphQL, AJAX and AWS.
               <br> <br>
-              I believe that any business/organizational idea or process can be transformed through technology, and so, if you feel you have any ideas which can be actualized, I'd be delighted to hear from you in the contact form <a class="other-link" href="#contact">here</a> or simply reach out to me on any of my social plaftorms listed on my site.
+              I believe that any business/organizational idea or process can be transformed through technology, and so, if you feel you have any ideas which can be actualized, I'd be delighted to hear from you in the contact form <a class="other-link" href="{{ route('home') }}#contact">here</a> or simply reach out to me on any of my social plaftorms listed on my site.
           </p>
         </div>
       </div>
