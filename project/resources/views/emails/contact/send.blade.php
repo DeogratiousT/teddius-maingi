@@ -1,6 +1,6 @@
 @component('mail::message')
 
-{{ $mail['message'] }}
+{{ $mail['content'] }}
 
 Regards, <br>
 {{ $mail['name'] }} <br>

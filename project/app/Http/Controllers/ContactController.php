@@ -34,6 +34,7 @@ class ContactController extends Controller
 
         return view('contacts.index', ['contacts'=>$contacts]);
     }
+    
     public function contactMe(Request $request)
     {
         $validated = Validator::make($request->all(), [
@@ -44,8 +45,7 @@ class ContactController extends Controller
         ],
         [
             'content.required' => 'The message field is required.'
-        ]
-    );
+        ]);
      
         if ($validated->passes()) {
             Contact::create([
@@ -54,7 +54,7 @@ class ContactController extends Controller
                 'subject' => $request->subject,
                 'content' => $request->content,
             ]);
-            // Mail::to(env('MAIL_OWN'))->send(new ContactSendMail($request->all()));
+            Mail::to(env('MAIL_OWN'))->send(new ContactSendMail($request->all()));
             // Mail::to($request->email)->send(new ContactReceivedMail($request->all()));
 
             return response()->json(['success'=>'Message Sent Successfully']);

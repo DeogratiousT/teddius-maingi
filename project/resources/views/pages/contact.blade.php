@@ -80,6 +80,7 @@
 
   @push('scripts')
       <script src="{{ asset('assets/js/app.js') }}"></script>
+      <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
       <script>
         /**
         * Contact Form Handling
