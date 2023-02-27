@@ -7,16 +7,16 @@
 		<meta charset="utf-8" /> 
 
 		<!-- Favicons -->
-		<link href=" {{ asset('myfiles/images/favicon.ico') }}" rel="icon">
-		<link href="{{ asset('myfiles/images/apple-touch-icon.png') }}" rel="apple-touch-icon">
+		<link href=" {{ asset('assets/myfiles/images/favicon.ico') }}" rel="icon">
+		<link href="{{ asset('assets/myfiles/images/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
 		<!--begin::Fonts-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 		<!--end::Fonts-->
 
 		<!--begin::Global Stylesheets Bundle(used by all pages)-->
-		<link href="{{ asset('assets/css/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-		<link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+		<link href="{{ asset('assets/assets/css/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
+		<link href="{{ asset('assets/assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
 		<!--end::Global Stylesheets Bundle-->
 
         @yield('head-imports')
@@ -62,7 +62,7 @@
 								<!--end::Aside mobile toggle-->
 								<!--begin::Logo-->
 								<a href="{{ route ('dashboard') }}" class="d-flex align-items-center">
-									<img alt="Logo" src="{{ asset('myfiles/images/nobg.png') }}" class="h-20px" />
+									<img alt="Logo" src="{{ asset('assets/myfiles/images/nobg.png') }}" class="h-20px" />
 								</a>
 								<!--end::Logo-->
 							</div>
@@ -110,11 +110,11 @@
 		</div>
 		<!--end::Scrolltop-->
 		<!--end::Main-->
-		<script>var hostUrl = "{{ asset ('assets/') }}";</script>
+		<script>var hostUrl = "{{ asset ('assets/assets/') }}";</script>
 		<!--begin::Javascript-->
 		<!--begin::Global Javascript Bundle(used by all pages)-->
-		<script src="{{ asset('assets/js/plugins.bundle.js') }}"></script>
-		<script src="{{ asset('assets/js/scripts.bundle.js') }}"></script>
+		<script src="{{ asset('assets/assets/js/plugins.bundle.js') }}"></script>
+		<script src="{{ asset('assets/assets/js/scripts.bundle.js') }}"></script>
 		<!--end::Global Javascript Bundle-->
 
 		<!--end::Javascript-->

@@ -9,8 +9,8 @@
 		<meta charset="utf-8" />
 
         <!-- Favicons -->
-        <link href=" {{ asset('myfiles/images/favicon.ico') }}" rel="icon">
-        <link href="{{ asset('myfiles/images/apple-touch-icon.png') }}" rel="apple-touch-icon">
+        <link href=" {{ asset('assets/myfiles/images/favicon.ico') }}" rel="icon">
+        <link href="{{ asset('assets/myfiles/images/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
 		<!--begin::Fonts-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
@@ -21,8 +21,8 @@
         <!-- end::Boostrap Icons -->
 
 		<!--begin::Global Stylesheets Bundle(used by all pages)-->
-		<link href="{{ asset('assets/css/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-		<link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+		<link href="{{ asset('assets/assets/css/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
+		<link href="{{ asset('assets/assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
 		<!--end::Global Stylesheets Bundle-->
 
         <!--begin::Page Vendor Stylesheets(used by this page)-->
@@ -55,7 +55,7 @@
                         </div>
                         <!--end::Content-->
                         <!--begin::Illustration-->
-                        <div class="d-flex flex-row-auto bgi-no-repeat bgi-position-x-center bgi-size-contain bgi-position-y-bottom min-h-100px min-h-lg-350px" style="background-image: url(/myfiles/images/nobg.png)"></div>
+                        <div class="d-flex flex-row-auto bgi-no-repeat bgi-position-x-center bgi-size-contain bgi-position-y-bottom min-h-100px min-h-lg-350px" style="background-image: url(assets/myfiles/images/nobg.png)"></div>
                         <!--end::Illustration-->
                     </div>
                     <!--end::Wrapper-->
@@ -80,12 +80,12 @@
 			<!--end::Main Content -->
 		</div>
 		<!--end::Main-->
-		<script>var hostUrl = "/";</script>
+		<script>var hostUrl = "/assets";</script>
 
 		<!--begin::Javascript-->
 		<!--begin::Global Javascript Bundle(used by all pages)-->
-		<script src="{{ asset('assets/js/plugins.bundle.js') }}"></script>
-		<script src="{{ asset('assets/js/scripts.bundle.js') }}"></script>
+		<script src="{{ asset('assets/assets/js/plugins.bundle.js') }}"></script>
+		<script src="{{ asset('assets/assets/js/scripts.bundle.js') }}"></script>
 		<!--end::Global Javascript Bundle-->
 
 		<!--begin::Page Custom Javascript(used by this page)-->
