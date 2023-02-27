@@ -56,7 +56,7 @@
             <div class="d-flex align-items-center">
                 <!--begin::Avatar-->
                 <div class="symbol symbol-circle symbol-40px">
-                    <img src="{{ asset('myfiles/images/nobg.png') }}" alt="photo" />
+                    <img src="{{ asset('assets/myfiles/images/nobg.png') }}" alt="photo" />
                 </div>
                 <!--end::Avatar-->
                 <!--begin::User info-->
@@ -90,7 +90,7 @@
                         <div class="menu-content d-flex align-items-center px-3">
                             <!--begin::Avatar-->
                             <div class="symbol symbol-50px me-5">
-                                <img alt="Logo" src="{{ asset('myfiles/images/nobg.png') }}" />
+                                <img alt="Logo" src="{{ asset('assets/myfiles/images/nobg.png') }}" />
                             </div>
                             <!--end::Avatar-->
                             <!--begin::Username-->

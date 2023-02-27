@@ -1,7 +1,7 @@
 @extends('layouts.dashboard.app')
 
 @section('head-imports')
-<link href="{{ asset('assets/css/datatables.bundle.css') }}" rel="stylesheet" />
+<link href="{{ asset('assets/assets/css/datatables.bundle.css') }}" rel="stylesheet" />
 @endsection
 
 @section('content')
@@ -36,7 +36,7 @@
 @endsection
 
 @push('scripts')
-<script src="{{ asset('assets/js/datatables.bundle.js') }}"></script>
+<script src="{{ asset('assets/assets/js/datatables.bundle.js') }}"></script>
 <script>
     $(document).ready(function(){
         $("#contacts-laratable").DataTable({
