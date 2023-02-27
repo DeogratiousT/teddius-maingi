@@ -32,6 +32,16 @@
   <!-- Template Main CSS File -->
   <link href="{{ asset('assets/personal/css/style.css') }}" rel="stylesheet">
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-17FH1XT7EW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-17FH1XT7EW');
+  </script>
+
 </head>
 
 <body>
