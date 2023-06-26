@@ -10,7 +10,7 @@
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
           <div class="icon-box">
             <div class="icon"><i class="bx bxl-dribbble"></i></div>
-            <h4><a href="javascript:void(0);">Web Design</a></h4>
+            <h4><a href="javascript:void(0);">Website Development</a></h4>
             <p>Showcase your products or services and provide information to users with outstanding website designs</p>
           </div>
         </div>

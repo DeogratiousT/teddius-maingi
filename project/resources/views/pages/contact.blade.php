@@ -3,10 +3,10 @@
 
       <div class="section-title">
         <h2>Contact</h2>
+        <p>Contact Me</p>
       </div>
 
-      <div class="row mt-2">
-
+      <div class="row">
         <div class="col-md-4 mt-4 d-flex align-items-stretch">
           <div class="info-box">
             <i class="bx bx-share-alt"></i>
@@ -23,7 +23,6 @@
           <div class="info-box">
             <i class="bx bx-envelope"></i>
             <h3>Email Me</h3>
-            <p>dev@teddiusmaingi.com</p>
             <p>teddiusmaingi@gmail.com</p>
           </div>
         </div>
@@ -73,7 +72,7 @@
           <div class="error-message"></div>
           <div class="sent-message">Your message has been sent. Thank you!</div>
         </div>
-        <div class="text-center"><button type="submit">Send Message</button></div>
+        <div class="text-center"><button type="submit" class="btn btn-outline-info p-2">Send Message</button></div>
       </form>
 
     </div>
