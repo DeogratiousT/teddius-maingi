@@ -2,6 +2,7 @@
   <div class="container">
 
     <h1><a href="#">Teddius Maingi</a></h1>
+    
     <h2>I'm a passionate Software Developer <br> From Nairobi, Kenya</h2>
 
     <nav id="navbar" class="navbar">
